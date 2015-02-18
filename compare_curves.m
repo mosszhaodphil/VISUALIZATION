@@ -64,6 +64,6 @@ function [] = compare_curves(simulate_signal, estimate_signal, retest_g_signal, 
 	hold on;
 
 	legend('Simulation', 'Estimation', 'Retest All params', 'Retest CBF ONLY');
-	title('CBF = 10');
+	title('CBF = 10'); % The title needs to be changed according to each CBF input value
 
 end
