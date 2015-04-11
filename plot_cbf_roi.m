@@ -1,5 +1,8 @@
-
-
+% This function plots the ROI curve of four mean perfusion
+% Input:
+% Four mean perfusion value text files
+% Output:
+% Plot
 
 function image_handle = plot_cbf_roi(file_1, file_2, file_3, file_4)
 
@@ -52,9 +55,11 @@ function image_handle = plot_cbf_roi(file_1, file_2, file_3, file_4)
 
 	set([line_1 line_2 line_3 line_4], 'LineWidth', 1); % Set line thickness
 
+	% Set x and y axis label
 	xlabel('GM PVE %');
 	ylabel('Mean CBF');
 
+	% Plot legent and title
 	legend(legend_1, legend_2, legend_3, legend_4);
 	title('Dataset 6');
 
