@@ -22,12 +22,12 @@ function calculate_mean_cbf(file_1, file_2, file_3, file_4, file_5, file_6)
 	matrix_5 = file_handle_5.img;
 	matrix_6 = file_handle_6.img;
 
-	mean_1 = mean(matrix_1(:));
-	mean_2 = mean(matrix_2(:));
-	mean_3 = mean(matrix_3(:));
-	mean_4 = mean(matrix_4(:));
-	mean_5 = mean(matrix_5(:));
-	mean_6 = mean(matrix_6(:));
+	mean_1 = mean(nonzeros(matrix_1(:)));
+	mean_2 = mean(nonzeros(matrix_2(:)));
+	mean_3 = mean(nonzeros(matrix_3(:)));
+	mean_4 = mean(nonzeros(matrix_4(:)));
+	mean_5 = mean(nonzeros(matrix_5(:)));
+	mean_6 = mean(nonzeros(matrix_6(:)));
 
 	fprintf(file_handle, '%f\n%f\n%f\n%f\n%f\n%f\n', mean_1, mean_2, mean_3, mean_4, mean_5, mean_6);
 
