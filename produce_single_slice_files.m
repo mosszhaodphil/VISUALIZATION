@@ -19,7 +19,7 @@ function produce_single_slice_files(input_file_name)
 		% X dimension
 		for i = 1 : x
 			cd('temp_x');
-			current_matrix = rot90(reshape(intput_matrix(i, :, :), [y, z]));
+			current_matrix = mat2gray(rot90(reshape(intput_matrix(i, :, :), [y, z])));
 			imwrite(current_matrix, strcat(num2str(i), '.png'));
 			cd('../');
 		end
@@ -27,7 +27,7 @@ function produce_single_slice_files(input_file_name)
 		% Y dimension
 		for i = 1 : y
 			cd('temp_y');
-			current_matrix = rot90(reshape(intput_matrix(:, i, :), [x, z]));
+			current_matrix = mat2gray(rot90(reshape(intput_matrix(:, i, :), [x, z])));
 			imwrite(current_matrix, strcat(num2str(i), '.png'));
 			cd('../');
 		end
@@ -35,7 +35,7 @@ function produce_single_slice_files(input_file_name)
 		% Z dimension
 		for i = 1 : z
 			cd('temp_z');
-			current_matrix = rot90(reshape(intput_matrix(:, :, i), [x, y]));
+			current_matrix = mat2gray(rot90(reshape(intput_matrix(:, :, i), [x, y])));
 			imwrite(current_matrix, strcat(num2str(i), '.png'));
 			cd('../');
 		end
@@ -45,6 +45,8 @@ function produce_single_slice_files(input_file_name)
 
 	if(dimension == 4)
 		[x, y, z, t] = size(intput_matrix);
+
+		mkdir('temp_t');
 
 		% X dimension
 		for i = 1 : x
@@ -69,9 +71,9 @@ function produce_single_slice_files(input_file_name)
 
 		% T dimension
 		for i = 1 : t
-			mkdir('temp_t');
 			cd('temp_t');
-
+			current_matrix = mat2gray(rot90(reshape(intput_matrix(:, :, ceil(z / 2), i), [x, y])));
+			imwrite(current_matrix, strcat(num2str(i), '.png'));
 			cd('../');
 		end
 
