@@ -7,12 +7,20 @@ function display_perfusion_map(file_name)
 
 	[x, y, z] = size(data);
 
+	im = data(:, :, ceil(z / 2) );
+
 	figure;
 
-	image(data(:, :, ceil(z / 2) ));
+	imagesc(im);
 
 	colormap hot;
 
+	caxis([0 120]);
+	set(gca, 'XTick', []);
+	set(gca, 'YTick', [])
+
 	hold on;
+
+	imtool(im);
 end
 
