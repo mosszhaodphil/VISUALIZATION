@@ -52,6 +52,7 @@ function image_handle = plot_cbf_roi(file_1, file_2, file_3, file_4)
 	line_3 = plot(x, cbf_roi_3, '-b.');
 	hold on;
 	line_4 = plot(x, cbf_roi_4, '-k.');
+	hold on;
 
 	axis([xmin xmax ymin ymax]); % set x and y axis limit
 
@@ -67,6 +68,15 @@ function image_handle = plot_cbf_roi(file_1, file_2, file_3, file_4)
 
 	%x0 = 0; y0 = 0; width = 600; height = 600;
 	%set(gcf,'units','points','position',[x0,y0,width,height]);
+
+
+	% Draw dash line to indicate true value in simulation
+	true_cbf = 60;
+	ref_y = true_cbf * ones(10);
+	ref_x = 10 : 10 : 100;
+
+	%line_4 = plot(ref_x, ref_y, '--m');
+	hold on;
 
 	fclose all;
 
