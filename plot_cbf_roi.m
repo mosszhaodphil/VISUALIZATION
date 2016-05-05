@@ -12,20 +12,20 @@ function image_handle = plot_cbf_roi(file_1, file_2, file_3, file_4)
 	legend_1 = 'LR on CBF map';
 	legend_2 = 'LR on ASL data';
 	legend_3 = 'Spatially Regularised';
-	legend_4 = 'No PV correction';
+	%legend_4 = 'No PV correction';
 
 	% load data from text file
 	file_handle_1 = fopen(strcat(file_1, file_extension), 'r');
 	file_handle_2 = fopen(strcat(file_2, file_extension), 'r');
 	file_handle_3 = fopen(strcat(file_3, file_extension), 'r');
-	file_handle_4 = fopen(strcat(file_4, file_extension), 'r');
+	%file_handle_4 = fopen(strcat(file_4, file_extension), 'r');
 	cbf_roi_1 = fscanf(file_handle_1, formatSpec);
 	cbf_roi_2 = fscanf(file_handle_2, formatSpec);
 	cbf_roi_3 = fscanf(file_handle_3, formatSpec);
-	cbf_roi_4 = fscanf(file_handle_4, formatSpec);
+	%cbf_roi_4 = fscanf(file_handle_4, formatSpec);
 
 	% find limit of x and y axis
-	data = [cbf_roi_1; cbf_roi_2; cbf_roi_3; cbf_roi_4];
+	data = [cbf_roi_1; cbf_roi_2; cbf_roi_3];
 	xmin = 10;
 	xmax = 100;
 	ymin = 15;
@@ -51,8 +51,8 @@ function image_handle = plot_cbf_roi(file_1, file_2, file_3, file_4)
 	hold on;
 	line_3 = plot(x, cbf_roi_3, '-b.');
 	hold on;
-	line_4 = plot(x, cbf_roi_4, '-k.');
-	hold on;
+	%line_4 = plot(x, cbf_roi_4, '-k.');
+	%hold on;
 
 	axis([xmin xmax ymin ymax]); % set x and y axis limit
 
@@ -63,7 +63,7 @@ function image_handle = plot_cbf_roi(file_1, file_2, file_3, file_4)
 	ylabel('Mean GM CBF (ml/100g/min)');
 
 	% Plot legent and title
-	legend(legend_1, legend_2, legend_3, legend_4);
+	legend(legend_1, legend_2, legend_3);
 	title('Noise free');
 
 	%x0 = 0; y0 = 0; width = 600; height = 600;

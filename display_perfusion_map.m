@@ -15,9 +15,9 @@ function display_perfusion_map(file_name)
 
 	colormap hot;
 
-	caxis([0 120]);
+	caxis([40 80]);
 	set(gca, 'XTick', []);
-	set(gca, 'YTick', [])
+	set(gca, 'YTick', []);
 
 	hold on;
 

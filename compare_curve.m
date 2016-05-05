@@ -14,6 +14,9 @@ function compare_curve(file_1, file_2)
 	vector_1 = matrix_1(32, 32, 8, :);
 	vector_2 = matrix_2(32, 32, 8, :);
 
+	%vector_1 = matrix_1(1, 1, 1, :);
+	%vector_2 = matrix_2(1, 1, 1, :);
+
 	vector_1 = vector_1(:);
 	vector_2 = vector_2(:);
 
@@ -24,6 +27,8 @@ function compare_curve(file_1, file_2)
 	hold on;
 
 	plot(vector_2, 'r');
+
+	legend(file_1, file_2);
 
 
 end
