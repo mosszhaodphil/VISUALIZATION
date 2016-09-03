@@ -11,8 +11,8 @@ function compare_curve(file_1, file_2)
 	matrix_1 = file_handle_1.img;
 	matrix_2 = file_handle_2.img;
 
-	vector_1 = matrix_1(32, 32, 8, :);
-	vector_2 = matrix_2(32, 32, 8, :);
+	vector_1 = matrix_1(5, 1, 1, :);
+	vector_2 = matrix_2(1, 1, 5, :);
 
 	%vector_1 = matrix_1(1, 1, 1, :);
 	%vector_2 = matrix_2(1, 1, 1, :);

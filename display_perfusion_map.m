@@ -9,7 +9,7 @@ function display_perfusion_map(file_name)
 
 	im = data(:, :, ceil(z / 2) );
 
-	figure;
+	current_figure = figure;
 
 	imagesc(im);
 
@@ -22,5 +22,14 @@ function display_perfusion_map(file_name)
 	hold on;
 
 	imtool(im);
+
+	% Set Figure position
+	figure_position = [2 2 21.05 21.05];
+	current_figure.Units = 'centimeters';
+	current_figure.Position = figure_position;
+
+
+	% Output image
+	print('_FILE_NAME','-dpng','-r300');
 end
 

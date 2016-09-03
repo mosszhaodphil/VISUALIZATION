@@ -31,5 +31,14 @@ function figure_handle = plot_montage(input_matrix, colormap_type)
 	figure_handle = montage(montage_volume, colormap(colormap_type));
 	colorbar;
 
+
+	% Set Figure position
+	current_figure.Units = 'centimeters';
+	%current_figure.Position = figure_position;
+
+
+	% Output image
+	%print('_FILE_NAME','-dpng','-r300');
+
 end
 
